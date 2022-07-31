@@ -9,8 +9,8 @@ public class Main {
 
         JFrame frame = new JFrame();
 
-        Vector l1 = new Vector(new Coordinate(-450, -150), new Coordinate(-200, -200), Color.MAGENTA , "v1");
-        Vector l2 = new Vector(new Coordinate(200, 390), new Coordinate(150, 30), Color.GREEN , "v2");
+        Vector l1 = new Vector(new Coordinate(-450, -150), new Coordinate(-150, -160), Color.MAGENTA , "v1");
+        Vector l2 = new Vector(new Coordinate(100, 290), new Coordinate(150, 30), Color.green  , "v2");
 
         Draw draw = new Draw();
         draw.setSize(500, 500);
