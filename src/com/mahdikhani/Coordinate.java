@@ -1,4 +1,4 @@
-package com.company;
+package com.mahdikhani;
 
 public class Coordinate {
     private int x;

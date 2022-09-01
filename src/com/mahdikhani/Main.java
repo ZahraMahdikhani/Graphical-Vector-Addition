@@ -1,4 +1,4 @@
-package com.company;
+package com.mahdikhani;
 
 import javax.swing.*;
 import java.awt.*;
