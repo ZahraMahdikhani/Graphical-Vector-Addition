@@ -8,23 +8,33 @@ public class Main {
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = (int) (screenSize.getWidth() * 0.8);
+        int screenHeight = (int) (screenSize.getHeight() * 0.7);
 
-        Vector l1 = new Vector(new Coordinate(-450, -150), new Coordinate(-150, -160), Color.MAGENTA , "v1");
-        Vector l2 = new Vector(new Coordinate(100, 290), new Coordinate(150, 30), Color.green  , "v2");
+        Coordinate v1Start = new Coordinate(-450, -150);
+        Coordinate v1End = new Coordinate(-150, -160);
+        Vector v1 = new Vector(v1Start, v1End, Color.MAGENTA, "v1");
+
+        Coordinate v2Start = new Coordinate(100, 290);
+        Coordinate v2End = new Coordinate(150, 30);
+        Vector v2 = new Vector(v2Start, v2End, Color.green, "v2");
 
         Draw draw = new Draw();
-        draw.setSize(500, 500);
+        draw.setSize(screenWidth, screenHeight);
 
-        draw.register(l1);
-        draw.register(Vector.moveToOrigin(l1));
-        draw.register(l2);
-        draw.register(Vector.moveToVector(Vector.moveToOrigin(l1) , l2));
-        draw.register(Vector.addition(l1, l2));
+        draw.register(
+                v1,
+                v2,
+                Vector.moveToOrigin(v1),
+                Vector.moveToVector(Vector.moveToOrigin(v1), v2),
+                Vector.addition(v1, v2)
+        );
 
-
-        frame.setTitle("vector");
+        frame.setTitle("Graphical vector addition");
         frame.add(draw);
-        frame.setSize(500, 500);
+        frame.setSize(screenWidth, screenHeight);
+        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }

@@ -9,10 +9,10 @@ public class Vector {
     private String name;
 
     public Vector(Coordinate startPoint, Coordinate endPoint, Color color, String name) {
-        this.setStartPoint(startPoint);
-        this.setEndPoint(endPoint);
-        this.setColor(color);
-        this.setName(name);
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+        this.color = color;
+        this.name = name;
     }
 
 
